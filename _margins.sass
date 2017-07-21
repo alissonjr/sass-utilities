@@ -1,0 +1,31 @@
+/// Criar margens automáticas a partir de um salto específico e um limite máximo
+///
+/// @param {Number} $n - Máximo de interações
+/// @param {Number} $jump - salto entre as interações (sempre em pixels)
+///
+/// @example
+///		+margins(1, 5px)
+///		// m-5
+///		// 	margin: 		5px !important
+///		// m-t-5
+///		// 	margin-top: 	5px !important
+///		// m-r-5
+///		// 	margin-right: 	5px !important
+///		// m-b-5
+///		// 	margin-bottom: 	5px !important
+///		// m-l-5
+///		// 	margin-left: 	5px !important
+
+=margins($n, $jump)
+	@for $i from 1 through $n
+		.m
+			&-#{$i * 5}
+				margin: 		$i * $jump !important
+			&-t-#{$i * 5}
+				margin-top: 	$i * $jump !important
+			&-r-#{$i * 5}
+				margin-right: 	$i * $jump !important
+			&-b-#{$i * 5}
+				margin-bottom: 	$i * $jump !important
+			&-l-#{$i * 5}
+				margin-left: 	$i * $jump !important
